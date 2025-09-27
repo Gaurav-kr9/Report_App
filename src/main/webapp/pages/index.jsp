@@ -56,6 +56,7 @@
         </td>
 
 <tr>
+<td><a href="/" class="btn btn-secondary">Reset</a></td>
 <td><input type="submit" value="Search" class="btn btn-primary"/>
 </td>
 </tr>
@@ -108,7 +109,11 @@
 
 
 Export : <a href= "excel"> Excel</a>
+<<<<<<< HEAD
 <a href="">pdf</a>
+=======
+<a href="pdf">pdf</a>
+>>>>>>> 9cb9afc (Final roject 0.1)
 
 </div>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
