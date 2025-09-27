@@ -56,7 +56,7 @@
         </td>
 
 <tr>
-<td><a href="/" class="btn btn-secondary">Reset</a></td>
+<td><a href="/" class="btn btn-secondary">Re-set</a></td>
 <td><input type="submit" value="Search" class="btn btn-primary"/>
 </td>
 </tr>
