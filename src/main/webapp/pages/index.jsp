@@ -56,6 +56,7 @@
         </td>
 
 <tr>
+   
 <td>
    <a href="/" class="btn btn-secondary">Re-set</a>
 </td>
