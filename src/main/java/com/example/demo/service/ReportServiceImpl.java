@@ -111,56 +111,44 @@ public class ReportServiceImpl implements ReportService {
 	}
 
 	@Override
-	public void exportPdf(HttpServletResponse response) throws IOException {
-		// Later we’ll add PDF export logic
+public void exportPdf(HttpServletResponse response) throws IOException {
 
-	}
+    Document document = new Document(PageSize.A4);
+    PdfWriter.getInstance(document, response.getOutputStream());
+    document.open();
+
+    Font fontTitle = FontFactory.getFont(FontFactory.TIMES_ROMAN);
+    fontTitle.setSize(20);
+
+    Paragraph paragraph = new Paragraph("Citizen Plans", fontTitle);
+    paragraph.setAlignment(Paragraph.ALIGN_CENTER);
+    document.add(paragraph);
+
+    PdfPTable table = new PdfPTable(6);
+    table.setSpacingBefore(5);
+
+    table.addCell("Id");
+    table.addCell("Citizen Name");
+    table.addCell("Plan Name");
+    table.addCell("Plan Status");
+    table.addCell("Start Date");
+    table.addCell("End Date");
+
+    List<CitizenPlan> plans = planRepo.findAll();
+
+    for (CitizenPlan plan : plans) {
+        table.addCell(String.valueOf(plan.getCitizenId()));
+        table.addCell(plan.getCitizenName());
+        table.addCell(plan.getPlanName());
+        table.addCell(plan.getPlanStatus());
+        table.addCell(String.valueOf(plan.getPlanStartDate()));
+        table.addCell(String.valueOf(plan.getPlanEndDate()));
+    }
+
+    document.add(table);
+    document.close();
+}
 }
 
-		
-		Document document = new Document(PageSize.A4);
-		
-		PdfWriter.getInstance(document, response.getOutputStream());
-		
-		document.open();
-		
-//		Paragraph p = new Paragraph("Citizen Plans Info");
-		
-		Font fontTitle = FontFactory.getFont(FontFactory.TIMES_ROMAN);
-		fontTitle.setSize(20);
-		
-		Paragraph paragraph = new Paragraph(" Citizen Plans",fontTitle);
-		
-		paragraph.setAlignment(Paragraph.ALIGN_CENTER);
-	
-		document.add(paragraph);
-		
-		PdfPTable table = new PdfPTable(6);
-		table.setSpacingBefore(5);
-		
-		table.addCell("Id");
-		table.addCell("Citizen Name");
-		table.addCell("Plan Name");
-		table.addCell("Plan Status");
-		table.addCell("Start Date");
-		table.addCell("End Date");
-		
-		List<CitizenPlan> plans = planRepo.findAll();
-		
-		for(CitizenPlan plan : plans)
-		{
-			
-			table.addCell(String.valueOf(plan.getCitizenId()));
-			table.addCell(plan.getCitizenName());
-			table.addCell(plan.getPlanName());
-			table.addCell(plan.getPlanStatus());
-			table.addCell(plan.getPlanStartDate() + "");
-			table.addCell(plan.getPlanEndDate() + "");
-		}
-		
-		document.add(table);
-		document.close();
-        }
-	}
 
 
