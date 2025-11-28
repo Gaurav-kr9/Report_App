@@ -22,8 +22,7 @@ public class ReportController {
 	@Autowired
 	private ReportService service;
 	
-<<<<<<< HEAD
-=======
+
 	@GetMapping("/pdf")
 	public void downloadpdf(HttpServletResponse response) throws IOException {
 		
@@ -31,7 +30,7 @@ public class ReportController {
 		response.addHeader("Content-Disposition", "attachment;filename=plan.pdf"); 
 		service.exportPdf(response);
 	}
->>>>>>> 9cb9afc (Final roject 0.1)
+
 	@GetMapping("/excel")
 	public void downloadExcel(HttpServletResponse response) throws IOException {
 		
