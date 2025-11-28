@@ -113,10 +113,10 @@ public class ReportServiceImpl implements ReportService {
 	@Override
 	public void exportPdf(HttpServletResponse response) throws IOException {
 		// Later we’ll add PDF export logic
-<<<<<<< HEAD
+
 	}
 }
-=======
+
 		
 		Document document = new Document(PageSize.A4);
 		
@@ -164,24 +164,3 @@ public class ReportServiceImpl implements ReportService {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 9cb9afc (Final roject 0.1)
