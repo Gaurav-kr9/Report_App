@@ -13,8 +13,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.CitizenPlan;
 import com.example.demo.repo.CitizenPlanRepository;
 import com.example.demo.request.SearchRequest;
-<<<<<<< HEAD
-=======
+
 import com.lowagie.text.Document;
 import com.lowagie.text.Font;
 import com.lowagie.text.FontFactory;
@@ -22,7 +21,7 @@ import com.lowagie.text.PageSize;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
->>>>>>> 9cb9afc (Final roject 0.1)
+
 
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
